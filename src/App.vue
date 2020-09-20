@@ -41,6 +41,10 @@ export default {
       "setup -> mobileViewQuery.addEventListener",
       mobileViewQuery.addEventListener
     );
+    console.log(
+      "setup -> mobileViewQuery.addListener",
+      mobileViewQuery.addListener
+    );
     setMobileView(mobileViewQuery.matches);
     mobileViewQuery.addEventListener("change", (e) => {
       setMobileView(e.matches);

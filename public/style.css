@@ -1,0 +1,70 @@
+:root {
+  /* --mobile: 768px; */
+  /* --desktop: 1024px; */
+  --button-border: 1px solid #d6d6d6;
+  --mobile-footer-height: 70px;
+  --app-padding: 10px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+
+  /* debug */
+  /* outline: 1px solid red; */
+}
+
+body {
+  /* position: relative; */
+  height: 100vh;
+
+  font-family: "IBM Plex Sans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  color: #000;
+  background: #e5e5e5;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+img {
+  display: block;
+}
+
+.top-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.btn {
+  width: 68px;
+  height: 68px;
+  border: 1px solid #d6d6d6;
+  border-radius: 3px;
+  background: none;
+  cursor: pointer;
+}
+
+.btn > img {
+  margin: 0 auto;
+}
+
+.btn-primary {
+  height: 46px;
+  width: 115px;
+  background: #1b63a4;
+  border: none;
+  border-radius: 33px;
+  color: #ffffff;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 24px;
+  cursor: pointer;
+}

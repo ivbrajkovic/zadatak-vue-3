@@ -1,26 +1,71 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app">
+    <Main />
+    <Side v-if="!isMobileView || isShowBill" :wantedPrice="17.0" />
+  </div>
+  <MobileFooter v-if="isMobileView">isMobileView</MobileFooter>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+// Components
+import Main from "./components/Main";
+import Side from "./components/Side";
+import MobileFooter from "./components/MobileFooter";
+
+// Store
+import useStore from "./store/useStore";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
+    Main,
+    Side,
+    MobileFooter,
+  },
+
+  setup() {
+    // Store
+    const {
+      setMobileView,
+      isShowBill,
+      setShowBill,
+      pushIngredient,
+      ingredients,
+      isMobileView,
+    } = useStore();
+
+    // Media query
+    const mobileViewQuery = matchMedia("screen and (max-width: 768px)");
+    setMobileView(mobileViewQuery.matches);
+    mobileViewQuery.addEventListener("change", (e) => {
+      setMobileView(e.matches);
+      if (!e.matches && isShowBill) setShowBill(false);
+    });
+
+    // Set the first ingredient on sandwich
+    pushIngredient(ingredients.find((el) => (el.name = "kruh")));
+
+    return {
+      isMobileView,
+      isShowBill,
+      setMobileView,
+      pushIngredient,
+    };
+  },
+};
 </script>
 
-<style>
+<style scoped>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  background: #ffffff;
+
+  margin: 0 auto;
+  padding: var(--app-padding);
+  width: 100%;
+  max-width: 776px;
+  height: 100%;
+  max-height: 499px;
+
+  display: flex;
 }
 </style>

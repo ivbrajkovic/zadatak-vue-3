@@ -8,12 +8,12 @@
     </div>
 
     <!-- Button move left -->
-    <button class="btn btn-list" aria-label="previous ingredient" v-on:click="moveLeft">
+    <button class="btn btn-list" aria-label="previous ingredient" v-on:click="moveRight">
       <img :src="icons.leftArrow" />
     </button>
 
     <!-- Button move right -->
-    <button class="btn btn-list" aria-label="next ingredient" v-on:click="moveRight">
+    <button class="btn btn-list" aria-label="next ingredient" v-on:click="moveLeft">
       <img :src="icons.rightArrow" />
     </button>
   </footer>
@@ -73,7 +73,6 @@ footer {
 }
 
 .list {
-  /* width: 100%; */
   height: 66px;
   display: flex;
   align-items: center;

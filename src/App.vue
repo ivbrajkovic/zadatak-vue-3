@@ -36,6 +36,7 @@ export default {
 
     // Media query
     const mobileViewQuery = matchMedia("screen and (max-width: 768px)");
+    console.log("setup -> mobileViewQuery", mobileViewQuery);
     setMobileView(mobileViewQuery.matches);
     mobileViewQuery.addEventListener("change", (e) => {
       setMobileView(e.matches);

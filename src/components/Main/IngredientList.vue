@@ -79,7 +79,7 @@ footer {
   align-items: center;
 
   /* IOS Safari - fix */
-  position: relative;
+  position: fixed;
   overflow: hidden !important;
 }
 

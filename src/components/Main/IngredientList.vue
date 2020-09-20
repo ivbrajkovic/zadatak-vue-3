@@ -73,13 +73,13 @@ footer {
 }
 
 .list {
-  width: 100%;
+  /* width: 100%; */
   height: 66px;
   display: flex;
   align-items: center;
 
   /* IOS Safari - fix */
-  position: fixed;
+  position: relative;
   overflow: hidden !important;
 }
 

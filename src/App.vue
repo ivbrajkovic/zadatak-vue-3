@@ -46,7 +46,7 @@ export default {
       mobileViewQuery.addListener
     );
     setMobileView(mobileViewQuery.matches);
-    mobileViewQuery.addEventListener("change", (e) => {
+    mobileViewQuery.addListener((e) => {
       setMobileView(e.matches);
       if (!e.matches && isShowBill) setShowBill(false);
     });

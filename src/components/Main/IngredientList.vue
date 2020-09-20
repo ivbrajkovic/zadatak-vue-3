@@ -77,7 +77,7 @@ footer {
   height: 66px;
   display: flex;
   align-items: center;
-  overflow: hidden;
+  overflow: hidden !important;
 }
 
 .list-item {

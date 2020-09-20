@@ -77,6 +77,9 @@ footer {
   height: 66px;
   display: flex;
   align-items: center;
+
+  /* IOS Safari - fix */
+  position: relative;
   overflow: hidden !important;
 }
 
